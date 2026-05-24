@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VASWA | Premium Dark Luxury Fragrances</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #c9a96e; 
+            --bg: #0a0a0a; 
+            --glass: rgba(255, 255, 255, 0.03);
+            --text-light: #f6f3ef;
+            --text-muted: #aaa;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body { font-family: 'Poppins', sans-serif; background: var(--bg); margin: 0; color: var(--text-light); overflow-x: hidden; }
+
+        .container { 
+            display: flex; max-width: 1100px; margin: 40px auto; gap: 50px; padding: 35px; 
+            background: rgba(255, 255, 255, 0.02); border-radius: 16px; backdrop-filter: blur(10px);
+            box-shadow: 0 0 40px rgba(201, 169, 110, 0.08); border: 1px solid var(--border);
+            animation: fadeUp 0.7s ease;
+        }
+
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        .image-section { flex: 1.2; position: sticky; top: 20px; align-self: flex-start; }
+        .img-container { width: 100%; height: 500px; border-radius: 12px; overflow: hidden; background: #111; border: 1px solid #333; padding: 10px; display: flex; align-items: center; justify-content: center; }
+        .main-image { width: 100%; height: 100%; object-fit: contain; transition: 0.4s ease; }
+        .thumb { display: flex; gap: 10px; margin-top: 15px; overflow-x: auto; padding-bottom: 10px; }
+        .thumb img { width: 85px; height: 85px; border-radius: 8px; cursor: pointer; border: 1px solid #333; flex-shrink: 0; transition: 0.3s; }
+
+        .details-section { flex: 1; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: var(--primary); text-shadow: 0 0 12px rgba(201, 169, 110, 0.4); margin: 0; }
+        .tag { background: rgba(201, 169, 110, 0.1); padding: 4px 12px; border-radius: 50px; font-size: 11px; color: var(--primary); border: 1px solid rgba(201,169,110,0.2); margin-right: 5px; text-transform: uppercase; }
+        
+        .tile-group { display: flex; gap: 10px; margin: 15px 0 25px; flex-wrap: wrap; }
+        .tile { flex: 1; min-width: 80px; padding: 12px; text-align: center; border: 1px solid #333; border-radius: 8px; cursor: pointer; background: rgba(255,255,255,0.03); color: var(--text-light); transition: 0.3s; font-weight: 600; }
+        .tile.selected { border-color: var(--primary); background: rgba(201, 169, 110, 0.1); color: var(--primary); box-shadow: 0 0 15px rgba(201, 169, 110, 0.2); }
+        
+        .price { font-size: 36px; color: var(--primary); font-family: 'Playfair Display', serif; font-weight: bold; }
+        .btn { background: linear-gradient(90deg, #c9a96e, #a67c3b); padding: 20px; display: block; text-align: center; color: white; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 18px; box-shadow: 0 5px 20px rgba(201, 169, 110, 0.4); margin-top: 20px; letter-spacing: 1px; }
+
+        .specs-container { max-width: 1100px; margin: 40px auto; padding: 20px; }
+        .specs-title { font-family: 'Playfair Display', serif; color: var(--primary); font-size: 24px; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        .specs-table { width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+        .specs-table td { padding: 15px 20px; font-size: 14px; border-bottom: 1px solid var(--border); }
+        .specs-label { font-weight: 600; color: var(--primary); width: 30%; background: rgba(255, 255, 255, 0.01); }
+        .specs-value { color: var(--text-muted); }
+
+        .navbar {
+            position: sticky; top: 0; z-index: 1000; padding: 12px 5%; display: flex;
+            align-items: center; justify-content: space-between; gap: 20px;
+            background: rgba(17, 17, 17, 0.75); backdrop-filter: blur(12px);
+            border-bottom: 1px solid #c9a96e;
+        }
+
+        .logo-img { width: 390px; height: 90px; object-fit: cover; border-radius: 10px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: #f5f5f5; text-decoration: none; font-size: 18px; font-weight: bold; transition: 0.3s; }
+        .nav-links a:hover { color: #c9a96e; }
+
+        footer {
+            margin-top: 80px; padding: 40px 20px; background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid var(--border); text-align: center; backdrop-filter: blur(10px);
+        }
+        .footer-logo { font-family: 'Playfair Display', serif; color: var(--primary); font-size: 40px; margin-bottom: 15px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; }
+
+        @media(max-width:768px){
+            .container { flex-direction: column; padding: 20px; margin: 0; border-radius: 0; }
+            .img-container { height: 150px; }
+            .navbar { flex-direction: column; padding: 10px; }
+            .logo-img { width: 220px; height: auto; }
+            .specs-table td { display: block; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo-box"><img src="images/logo3.png" class="logo-img"></div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="image-section">
+        <div class="img-container"><img id="mainImg" src="" class="main-image"></div>
+        <div class="thumb" id="thumbGallery"></div>
+    </div>
+
+    <div class="details-section">
+        <div id="tags"></div>
+        <h1 id="name">...</h1>
+        <p id="about" style="color: var(--text-muted); line-height: 1.6; margin: 20px 0;"></p>
+
+        <span style="font-size: 13px; color: var(--text-muted);">Choose Quantity</span>
+        <div class="tile-group" id="sizeGroup"></div>
+
+        <div id="bottleSelectionArea">
+            <span style="font-size: 13px; color: var(--text-muted);">Bottle Selection</span>
+            <div class="tile-group" id="bottleGroup">
+                <div class="tile selected" onclick="selectBottle(this, 0)">Standard</div>
+                <div class="tile" onclick="selectBottle(this, 100)">Designer (+₹100)</div>
+            </div>
+        </div>
+
+        <div class="price" id="price">₹0</div>
+        <div id="delivery" style="font-size: 13px; margin: 10px 0; padding: 8px; background: rgba(201,169,110,0.1); border-radius: 6px; display: inline-block;"></div>
+
+        <h2 style="font-size: 16px; color: #ff4d4d;">COD NOT AVAILABLE FOR NOW</h2>
+
+        <a id="orderBtn" class="btn">ORDER ON WHATSAPP</a>
+        <p style="text-align: center; font-size: 12px; color: #666; margin-top: 15px;">• Long Lasting • Inspired</p>
+    </div>
+</div>
+
+<div class="specs-container">
+    <div class="specs-title">PRODUCT SPECIFICATIONS</div>
+    <div id="specs-content"></div>
+</div>
+
+<footer>
+    <div class="footer-logo">VASWA</div>
+    
+    <div class="footer-links">
+        <a href="mailto:vaswaperfumes@gmail.com">📧 vaswaperfumes@gmail.com</a>
+        <a href="https://www.instagram.com/vaswaperfumes" target="_blank">📸 vaswaperfumes</a>
+        <a href="terms.html">📜 Terms & Conditions</a>
+    </div>
+
+    <div class="copyright" style="margin-top: 20px; font-size: 12px; color: var(--text-muted);">
+        © 2026 VASWA Premium Fragrances. All Rights Reserved.
+    </div>
+</footer>
+
+<script>
+const products = [
+    {id:1, name:"White Musk", type:"standard", img:["images/1.jpeg"], tags:["Fresh"], about:"Clean and smooth fragrance perfect for daily use.", top:"Lily, Ylang-Ylang", middle:"Jasmine, Rose", base:"White Musk, Vanilla", gender:"Unisex", occasion:"Casual Daytime"},
+    {id:2, name:"Ice Berg", type:"standard", img:["images/2.jpeg"], tags:["Cool"], about:"Refreshing cool fragrance for an active lifestyle.", top:"Mint, Green Notes", middle:"Sea Water, Calone", base:"Cedar, Musk", gender:"Men", occasion:"Summer / Outdoor"},
+    {id:3, name:"Bela", type:"standard", img:["images/3.jpeg"], tags:["Floral"], about:"Sweet jasmine-inspired floral fragrance.", top:"Jasmine Bud", middle:"Indian Tuberose", base:"Honeysuckle", gender:"Women", occasion:"Festivals"},
+    {id:4, name:"Jannatul Firdaus", type:"standard", img:["images/4.jpeg"], tags:["Oriental"], about:"Classic oriental attar with a timeless green profile.", top:"Aldehydes, Basil", middle:"Geranium, Iris", base:"Amber, Musk", gender:"Unisex", occasion:"Spiritual / Traditional"},
+    {id:5, name:"Ameeral Oud", type:"standard", img:["images/5.jpeg"], tags:["Woody"], about:"Deep woody oud fragrance with a hint of spice.", top:"Oud, Saffron", middle:"Patchouli", base:"Sandalwood, Vanilla", gender:"Unisex", occasion:"Evening / Luxury"},
+    {id:6, name:"Desire", type:"standard", img:["images/6.jpeg"], tags:["Modern"], about:"A modern, sophisticated scent for the trendsetter.", top:"Apple, Lemon", middle:"Rose, Teakwood", base:"Vanilla, Musk", gender:"Men", occasion:"Party Wear"},
+    {id:7, name:"Dana", type:"standard", img:["images/7.jpeg"], tags:["Sweet"], about:"Light sweet aroma with a gentle finish.", top:"Citrus", middle:"Soft Florals", base:"Powdery Musk", gender:"Women", occasion:"Daily Wear"},
+    {id:8, name:"Kesar Chandan", type:"premium", img:["images/8.jpeg"], tags:["Saffron","Sandalwood"], about:"Rich saffron and sandalwood blend.", top:"Pure Saffron", middle:"Sandalwood Oil", base:"Amber, Musk", gender:"Unisex", occasion:"Religious / Meditation"},
+    {id:9, name:"Majmua", type:"standard", img:["images/9.png"], tags:["Floral","Musky"], about:"Traditional Kannauj blend of four classic attars.", top:"Kewda", middle:"Khas (Vetiver)", base:"Sandalwood, Earthy notes", gender:"Unisex", occasion:"Traditional"},
+    {id:10, name:"White Oud", type:"standard", img:["images/10.png"], tags:["Woody"], about:"Soft, creamy oud fragrance that is subtle yet elegant.", top:"Soft Oud", middle:"White Floral", base:"White Musk", gender:"Unisex", occasion:"Office Wear"},
+    {id:11, name:"Gucci Flora", type:"standard", img:["images/9.jpeg"], tags:["Floral"], about:"Inspired floral scent that blooms on the skin.", top:"Peony, Citrus", middle:"Rose, Osmanthus", base:"Sandalwood, Patchouli", gender:"Women", occasion:"Date Night"},
+    {id:12, name:"Magnet", type:"standard", img:["images/14.jpeg"], tags:["Attractive"], about:"Strong attractive fragrance with magnetic appeal.", top:"Spices", middle:"Leather", base:"Woody Musk", gender:"Men", occasion:"Office"},
+    {id:13, name:"Shanaya", type:"standard", img:["images/15.jpeg"], tags:["Elegant"], about:"Elegant scent designed for formal occasions.", top:"Sweet Orange", middle:"Florals", base:"Amber, Patchouli", gender:"Women", occasion:"Weddings"},
+    {id:14, name:"Blue", type:"standard", img:["images/16.jpeg"], tags:["Fresh"], about:"Fresh aquatic fragrance reminiscent of the ocean.", top:"Grapefruit", middle:"Ginger, Jasmine", base:"Incense, Cedar", gender:"Men", occasion:"Summer Daily"},
+    {id:15, name:"Aseel", type:"standard", img:["images/17.jpeg"], tags:["Arabic"], about:"Classic Arabic scent with traditional heritage.", top:"Red Rose, Saffron", middle:"Sandalwood", base:"Oud, Vanilla", gender:"Unisex", occasion:"Evening"},
+    {id:16, name:"Musk Rose", type:"standard", img:["images/18.jpeg"], tags:["Floral"], about:"A romantic blend of musk and fresh roses.", top:"Fresh Rose", middle:"Geranium", base:"White Musk", gender:"Women", occasion:"Casual"},
+    {id:17, name:"Sabaya", type:"standard", img:["images/19.jpeg"], tags:["Floral"], about:"Sweet and vibrant floral scent.", top:"Green Apple", middle:"Rose, Jasmine", base:"Musk", gender:"Women", occasion:"Daily Wear"},
+    {id:18, name:"Bakhoor", type:"standard", img:["images/21.jpeg"], tags:["Smoky"], about:"Traditional smoky fragrance for a luxury vibe.", top:"Woody notes", middle:"Resins", base:"Earthy smoke", gender:"Unisex", occasion:"Luxury"},
+    {id:19, name:"Vanilla", type:"standard", img:["images/vanilla.png"], tags:["Sweet"], about:"Warm and comforting pure vanilla scent.", top:"Creamy Vanilla", middle:"Coconut", base:"Sugar, Vanilla Bean", gender:"Unisex", occasion:"Gourmand lovers"},
+    {id:20, name:"Chocolate", type:"standard", img:["images/chocolate.png"], tags:["Sweet"], about:"Indulgent chocolate fragrance for gourmand lovers.", top:"Cocoa Bean", middle:"Milk Chocolate", base:"Vanilla, Musk", gender:"Unisex", occasion:"Casual"},
+    {id:21, name:"Black Oud", type:"premium", img:["images/black__oud.png"], tags:["Woody"], about:"Powerful black oud with mysterious depth.", top:"Intense Oud", middle:"Labdanum", base:"Patchouli, Musk", gender:"Men", occasion:"Night Wear"},
+    {id:22, name:"SRK", type:"premium", img:["images/srk.png"], tags:["Bold"], about:"Luxury bold fragrance inspired by star power.", top:"Spicy Cardamom", middle:"Leather", base:"Amber, Oud", gender:"Men", occasion:"Premium Luxury"},
+    {id:23, name:"Ombre Leather",type:"premium", img:["images/omber.jpg"], tags:["Leather"], about:"Strong leather scent that defines rugged luxury.", top:"Cardamom", middle:"Leather, Jasmine", base:"Amber, Moss", gender:"Unisex", occasion:"Evening Luxury"},
+    {id:24, name:"Mukhallat Zafran", type:"luxury", img:["images/zafran.png"], tags:["Saffron"], about:"Rich royal saffron blend for special occasions.", top:"Saffron Buds", middle:"Florals", base:"Amber, Sandalwood", gender:"Unisex", occasion:"Royalty"},
+    {id:25, name:"Mitti Attar", type:"luxury", img:["images/mitthi.png"], tags:["Earthy"], about:"The iconic scent of rain hitting parched earth.", top:"Wet Earth", middle:"Natural Mud", base:"Sandalwood", gender:"Unisex", occasion:"Unique / Personal"},
+    {id:26, name:"Most Wanted", type:"premium", img:["images/wanted.png"], tags:["Modern"], about:"Trendy premium scent for a bold statement.", top:"Ginger", middle:"Woody notes", base:"Bourbon Vanilla", gender:"Men", occasion:"Party"},
+    {id:29, name:"Khus", type:"elite", img:["images/khus.png"], tags:["Cool"], about:"Intense cooling vetiver fragrance.", top:"Green Vetiver", middle:"Earthy Roots", base:"Pure Khas Extract", gender:"Unisex", occasion:"Cooling / Summer"},
+    {id:30, name:"Ajmal Blue (Inspired)", type:"premium", img:["images/ajmal_blu2.png"], tags:["Fresh"], about:"Fresh premium aquatic scent.", top:"Bergamot", middle:"Lotus", base:"Amber, Musk", gender:"Men", occasion:"Summer Premium"},
+    {id:31, name:"Rasasi Hawas", type:"premium", img:["images/hawas.png"], tags:["Strong"], about:"Long-lasting aquatic scent.", top:"Apple, Bergamot", middle:"Cinnamon", base:"Ambrette", gender:"Men", occasion:"All day"},
+    {id:32, name:"Le Male Elixer", type:"premium", img:["images/alixer.png"], tags:["Luxury"], about:"Premium inspired fragrance with warm honeyed notes.", top:"Lavender", middle:"Benzoin", base:"Honey, Tobacco", gender:"Men", occasion:"Luxury Night"},
+    {id:101, name:"Car Acqua Di Gio", type:"car", img:["images/car1.jpeg"], tags:["Car"], about:"Luxury car freshener.", top:"Sea Salt", middle:"Rosemary", base:"Cedar", gender:"Car", occasion:"Interior"},
+    {id:102, name:"Car Desire", type:"car", img:["images/car2.jpeg"], tags:["Car"], about:"Keep your drive fresh.", top:"Citrus", middle:"Rose", base:"Musk", gender:"Car", occasion:"Interior"},
+    {id:103, name:"Car Brut", type:"car", img:["images/car3.jpeg"], tags:["Car"], about:"Classic masculine freshener.", top:"Lavender", middle:"Geranium", base:"Oakmoss", gender:"Car", occasion:"Interior"},
+    {id:104, name:"Car Lavender", type:"car", img:["images/car4.jpeg"], tags:["Car"], about:"Calming lavender scent.", top:"Lavender", middle:"Eucalyptus", base:"Camphor", gender:"Car", occasion:"Interior"},
+    {id:105, name:"Car Magnet", type:"car", img:["images/car5.jpeg"], tags:["Car"], about:"Strong attractive car scent.", top:"Spices", middle:"Woods", base:"Amber", gender:"Car", occasion:"Interior"}
+];
+
+const pricing = { 
+    standard:{3:150, 6:300, 12:600}, 
+    premium:{3:200, 6:400, 12:800}, 
+    luxury:{3:250, 6:500, 12:1000}, 
+    elite:{3:400, 6:800, 12:1600}, 
+    car:{8:350, 12:500} 
+};
+
+const params = new URLSearchParams(window.location.search);
+const productId = parseInt(params.get("id")) || 1;
+const product = products.find(p => p.id === productId) || products[0];
+
+// Initialization
+document.getElementById("name").innerText = product.name;
+document.getElementById("about").innerText = product.about;
+product.tags.forEach(t => document.getElementById("tags").innerHTML += `<span class="tag">${t}</span>`);
+
+// Dynamic Specifications Logic
+const specsContent = document.getElementById("specs-content");
+if (product.type === "car") {
+    specsContent.innerHTML = `<table class="specs-table">
+        <tr><td class="specs-label">Composition</td><td class="specs-value">Premium Fragrance Oil + Ethanol Base</td></tr>
+        <tr><td class="specs-label">Application</td><td class="specs-value">Car Hanging / Vent / Small Spaces</td></tr>
+        <tr><td class="specs-label">Top Notes</td><td class="specs-value">${product.top}</td></tr>
+        <tr><td class="specs-label">Middle Notes</td><td class="specs-value">${product.middle}</td></tr>
+        <tr><td class="specs-label">Base Notes</td><td class="specs-value">${product.base}</td></tr>
+        <tr><td class="specs-label">Diffusion</td><td class="specs-value">High Volatility (Fast Action)</td></tr>
+        <tr><td class="specs-label">Best Suited For</td><td class="specs-value">Automotive Interiors</td></tr>
+        <tr><td class="specs-label">Country of Origin</td><td class="specs-value">India</td></tr>
+    </table>`;
+} else {
+    specsContent.innerHTML = `<table class="specs-table">
+        <tr><td class="specs-label">Concentration</td><td class="specs-value">Pure Attar Oil</td></tr>
+        <tr><td class="specs-label">Gender</td><td class="specs-value">${product.gender}</td></tr>
+        <tr><td class="specs-label">Top Notes</td><td class="specs-value">${product.top}</td></tr>
+        <tr><td class="specs-label">Middle Notes</td><td class="specs-value">${product.middle}</td></tr>
+        <tr><td class="specs-label">Base Notes</td><td class="specs-value">${product.base}</td></tr>
+        <tr><td class="specs-label">Longevity</td><td class="specs-value">4-6 Hours on Skin / 8-12 Hours on Fabric</td></tr>
+        <tr><td class="specs-label">Best Suited For</td><td class="specs-value">${product.occasion}</td></tr>
+        <tr><td class="specs-label">Country of Origin</td><td class="specs-value">India</td></tr>
+    </table>`;
+}
+
+// Image Gallery Logic
+const mainImg = document.getElementById("mainImg");
+const thumbGallery = document.getElementById("thumbGallery");
+if(product.img) {
+    mainImg.src = product.img[0];
+    product.img.forEach((src, idx) => {
+        const img = document.createElement('img');
+        img.src = src;
+        if(idx === 0) img.style.border = "2px solid #c9a96e";
+        img.onclick = function() {
+            mainImg.src = this.src;
+            document.querySelectorAll(".thumb img").forEach(i => i.style.border = "1px solid #333");
+            this.style.border = "2px solid #c9a96e";
+        };
+        thumbGallery.appendChild(img);
+    });
+}
+
+// Dynamic Size and Bottle UI logic
+let selectedSize;
+let selectedBottleExtra = 0;
+
+function renderOptions() {
+    const sizeGroup = document.getElementById("sizeGroup");
+    const bottleArea = document.getElementById("bottleSelectionArea");
+    sizeGroup.innerHTML = ""; 
+    
+    // 1. Handle Sizes
+    let sizes = (product.type === "car") ? [8, 12] : [3, 6, 12];
+    selectedSize = sizes[0]; 
+
+    sizes.forEach(size => {
+        const tile = document.createElement('div');
+        tile.className = `tile ${size === selectedSize ? 'selected' : ''}`;
+        tile.innerText = `${size} ml`;
+        tile.onclick = function() { selectSize(this, size); };
+        sizeGroup.appendChild(tile);
+    });
+
+    // 2. Handle Bottle Visibility
+    if (product.type === "car") {
+        bottleArea.style.display = "none";
+        selectedBottleExtra = 0; // Ensure no charge for car bottles
+    } else {
+        bottleArea.style.display = "block";
+    }
+}
+
+function selectSize(el, val) { 
+    document.querySelectorAll('#sizeGroup .tile').forEach(t => t.classList.remove('selected')); 
+    el.classList.add('selected'); 
+    selectedSize = val; 
+    updatePrice(); 
+}
+
+function selectBottle(el, val) { 
+    document.querySelectorAll('#bottleGroup .tile').forEach(t => t.classList.remove('selected')); 
+    el.classList.add('selected'); 
+    selectedBottleExtra = val; 
+    updatePrice(); 
+}
+
+function updatePrice(){
+    let total = pricing[product.type][selectedSize] + selectedBottleExtra;
+    document.getElementById("price").innerText = "₹" + total;
+    document.getElementById("delivery").innerHTML = total >= 1000 ? "✅ <span style='color:#c9a96e'>Free Delivery Applied</span>" : `🚚 Add ₹${1000-total} for Free Delivery`;
+    
+    // Dynamic WhatsApp Message
+    let bottleText = (product.type === "car") ? "" : `\n*Bottle:* ${selectedBottleExtra > 0 ? "Designer" : "Standard"}`;
+    const msg = `Hello VASWA,\nI'd like to order:\n*Product:* ${product.name}\n*Size:* ${selectedSize}ml${bottleText}\n*Price:* ₹${total}`;
+    
+    document.getElementById("orderBtn").href = `https://wa.me/918840899238?text=${encodeURIComponent(msg)}`;
+}
+
+// Initial setup call
+renderOptions();
+updatePrice();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VASWA</title>
+
+<style>
+body { font-family: Arial; background:#f1f3f6; margin:0;scroll-behavior: smooth; }
+
+/* 🔥 NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    background:#2f5d50;
+    color:white;
+    padding:12px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+/* LOGO */
+.logo-box {
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* LOGO IMAGE (RECTANGLE) */
+.logo-img {
+    width: 390px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.logo-text {
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* LINKS */
+.nav-links a {
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.nav-links a:hover {
+    text-decoration:underline;
+    text-decoration-color: #a67c3b;
+    
+    
+}
+
+/* SEARCH */
+.search-box {
+    flex: 0.5;
+    max-width: 300px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 6px 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-box input {
+    width:100%;
+    padding:8px;
+    border-radius:5px;
+    border:none;
+}
+
+/* FILTER */
+#filter {
+    padding:8px;
+    border-radius:5px;
+    border:none;
+}
+
+/* 🔥 HERO SECTION */
+.hero {
+    height: 60vh;
+    background: linear-gradient(135deg, #2f5d50, #1f3d34);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero-content {
+    background: rgba(0,0,0,0.4);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-content button {
+    padding: 12px 25px;
+    background: #d97742;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-content button:hover {
+    background: #c96b35;
+}
+
+/* GRID */
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    gap:25px;
+    padding:30px;
+}
+
+/* CARD */
+.card {
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card:hover {
+    box-shadow:0 6px 15px rgba(0,0,0,0.1);
+}
+
+.card img { width:100%; height:180px; object-fit:contain; }
+
+.price { color:green; font-weight:bold; }
+
+/* SECTIONS */
+section {
+    padding:40px;
+    background:white;
+    margin:20px;
+    border-radius:10px;
+}
+
+/* 🔥 CARD UPGRADE */
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* IMAGE ZOOM */
+.card img {
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* LIFT EFFECT */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* BADGE */
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #d97742;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+/* BUTTON */
+.card-btn {
+    margin-top: 10px;
+    padding: 8px;
+    background: #2f5d50;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+}
+/* =========================================
+   🔥 VASWA PREMIUM NAVBAR
+   ========================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    /* Glassmorphism Effect */
+    background: rgba(17, 17, 17, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* Luxury Gold Border */
+    border-bottom: 1px solid #c9a96e;
+    transition: 0.3s ease;
+}
+
+/* LOGO SECTION */
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 390px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* NAVIGATION LINKS */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #c9a96e;
+    text-decoration: underline;
+    text-decoration-color: #a67c3b;
+    text-underline-offset: 8px;
+}
+
+/* SEARCH & FILTER AREA */
+.search-box {
+    flex: 0.5;
+    max-width: 300px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    color: white;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #c9a96e;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#filter {
+    padding: 8px 12px;
+    background: #1a1a1a;
+    color: #c9a96e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .logo-img {
+        width: 220px; /* Scaled down for mobile screens */
+        height: auto;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .search-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #filter {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .navbar {
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+/* ================================================= */
+/* 🔥🔥 LUXURY THEME (ADDED — NO REMOVAL ABOVE) 🔥🔥 */
+/* ================================================= */
+
+body {
+    background: #0f0f0f;
+    color: #f5f5f5;
+}
+
+
+
+
+/* HERO DARK */
+.hero {
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+}
+
+.hero-content h1 {
+    color: #c9a96e;
+}
+
+/* CARD DARK */
+.card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #f5f5f5;
+}
+
+/* GOLD HOVER */
+.card:hover {
+    box-shadow: 0 10px 25px rgba(201,169,110,0.3);
+}
+
+/* PRICE GOLD */
+.price {
+    color: #c9a96e;
+}
+
+/* BADGE GOLD */
+.badge {
+    background: #c9a96e;
+    color: black;
+    font-weight: bold;
+}
+
+/* BUTTON GOLD */
+.card-btn {
+    background: linear-gradient(90deg, #c9a96e, #a67c3b);
+    color: black;
+    font-weight: bold;
+}
+
+.hero-content button {
+    background: linear-gradient(90deg, #c9a96e, #a67c3b);
+    color: black;
+}
+
+/* INPUT DARK */
+.search-box input {
+    background: #1a1a1a;
+    color: white;
+    border: 1px solid #333;
+}
+
+#filter {
+    background: #1a1a1a;
+    color: white;
+}
+
+/* SECTIONS DARK */
+section {
+    background: #1a1a1a;
+    border: 1px solid #333;
+}
+
+/* ================================================= */
+/* ✨ GLASS EFFECT (NEW ADDITION) */
+/* ================================================= */
+
+
+
+.card {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover {
+    box-shadow: 0 10px 30px rgba(201,169,110,0.4);
+}
+
+.card-btn {
+    backdrop-filter: blur(5px);
+}
+
+/* ================================================= */
+/* 🖼 HERO IMAGE (NEW ADDITION) */
+/* ================================================= */
+
+.hero {
+    height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+        url("images/hero.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* ✨ TEXT GLOW */
+.hero-content h1 {
+    text-shadow: 0 0 15px rgba(201,169,110,0.5);
+}
+/* ========================= */
+/* 💬 WHATSAPP FLOAT BUTTON */
+/* ========================= */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, #25D366, #1ebe5d);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    z-index: 9999;
+    transition: 0.3s;
+}
+.whatsapp-float::after {
+    content: "Order Now";
+}
+
+/* HOVER EFFECT */
+.whatsapp-float:hover {
+    transform: scale(1.15);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+/* GLASS TOUCH */
+.whatsapp-float {
+    backdrop-filter: blur(6px);
+}
+/* ========================= */
+/* 💬 WHATSAPP ANIMATION */
+/* ========================= */
+
+/* PULSE ANIMATION */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37,211,102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
+}
+
+/* FLOAT ANIMATION */
+@keyframes floaty {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+
+/* APPLY ANIMATION */
+.whatsapp-float {
+    animation: pulse 2s infinite, floaty 3s ease-in-out infinite;
+}
+
+/* TOOLTIP */
+.whatsapp-float::after {
+    content: "Chat with us";
+    position: absolute;
+    right: 70px;
+    background: #111;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+/* SHOW TOOLTIP */
+.whatsapp-float:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* ========================= */
+/* 🔥 FOOTER */
+/* ========================= */
+footer {
+            margin-top: 80px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .footer-logo { font-family: 'Playfair Display', serif; color:#c9a96e; font-size: 40px; letter-spacing: 2px; margin-bottom: 15px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; transition: 0.3s; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+        .footer-links a:hover { color: var(--primary); }
+        .copyright { font-size: 11px; color: #555; margin-top: 20px; }
+
+/* ===== NEW PREMIUM ADDITIONS ===== */
+
+/* FADE ANIMATION */
+.card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SHINE EFFECT */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+/* RIPPLE */
+.card-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-btn:active::after {
+    content:"";
+    position:absolute;
+    width:200px;
+    height:200px;
+    background:rgba(255,255,255,0.3);
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+/* HERO GLOW */
+.hero-content {
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR STACK */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .logo-img {
+        width: 200px;
+        height: auto;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    /* SEARCH + FILTER */
+    .search-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    #filter {
+        width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+        height: 70vh;
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 26px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .hero-content button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* GRID */
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+
+    /* CARD */
+    .card {
+        padding: 10px;
+    }
+
+    .card img {
+        height: 140px;
+    }
+
+    .card h3 {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    .card-btn {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    
+    /* WHATSAPP */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR STACK */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .logo-img {
+        width: 200px;
+        height: auto;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    /* SEARCH + FILTER */
+    .search-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    #filter {
+        width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+        height: 70vh;
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 26px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .hero-content button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* GRID */
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+
+    /* CARD */
+    .card {
+        padding: 10px;
+    }
+
+    .card img {
+        height: 140px;
+    }
+
+    .card h3 {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    .card-btn {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+
+
+    /* WHATSAPP */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+</style>
+</head>
+
+
+</a>
+<body>
+    <a href="https://wa.me/918840899238?text=Hello%20VASWA%2C%20I%20want%20to%20know%20more%20about%20your%20attars"
+   target="_blank"
+   class="whatsapp-float">
+   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="28">
+</a>
+
+<!-- 🔥 UPDATED NAVBAR -->
+<div class="navbar">
+
+    <div class="logo-box">
+        <img src="images/logo3.png" class="logo-img">
+        
+    </div>
+
+    <div class="nav-links">
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="Terms.html">Terms & Conditions</a>
+
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search attars...">
+    </div>
+
+    <select id="filter">
+        <option value="all">All</option>
+        <option value="standard">Standard</option>
+        <option value="premium">Premium</option>
+        <option value="luxury">Luxury</option>
+        <option value="elite">Elite</option>
+        <option value="car">Car Freshener</option>
+    </select>
+
+</div>
+
+<!-- 🔥 HERO ADDED (NEW) -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Discover Premium Attars(Itra) From "Itra Nagri" Kannauj</h1>
+        <p>Great Smell❤️ • Long Lasting • Alcohol Free • Inspired</p>
+        <button onclick="scrollToProducts()">Shop Now</button>
+    </div>
+</section>
+
+<div class="grid" id="grid"></div>
+<footer>
+    <div class="footer-logo">VASWA</div>
+    
+    <div class="footer-links">
+        <a href="mailto:vaswaperfumes@gmail.com">📧 vaswaperfumes@gmail.com</a>
+        <a href="https://www.instagram.com/vaswaperfumes" target="_blank">📸 vaswaperfumes</a>
+        <a href="terms.html">📜 Terms & Conditions</a>
+    </div>
+
+    <div class="copyright" style="margin-top: 20px; font-size: 12px; color: var(--text-muted);">
+        © 2026 VASWA Premium Fragrances. All Rights Reserved.
+    </div>
+</footer>
+
+
+
+
+<script>
+
+const products = [
+{id:1,name:"White Musk",type:"standard",img:["images/1.jpeg"]},
+{id:2,name:"Ice Berg",type:"standard",img:["images/2.jpeg"]},
+{id:3,name:"Bela",type:"standard",img:["images/3.jpeg"]},
+{id:4,name:"Jannatul Firdaus",type:"standard",img:["images/4.jpeg"]},
+{id:5,name:"Ameeral Oud",type:"standard",img:["images/5.jpeg"]},
+{id:6,name:"Desire",type:"standard",img:["images/6.jpeg"]},
+{id:7,name:"Dana",type:"standard",img:["images/7.jpeg"]},
+
+{id:9,name:"Majmua",type:"standard",img:["images/9.png"]},
+{id:10,name:"White Oud",type:"standard",img:["images/10.png"]},
+{id:11,name:"Gucci Flora",type:"standard",img:["images/9.jpeg"]},
+{id:12,name:"Magnet",type:"standard",img:["images/14.jpeg"]},
+{id:13,name:"Shanaya",type:"standard",img:["images/15.jpeg"]},
+{id:14,name:"Cool Water Blue",type:"standard",img:["images/16.jpeg"]},
+{id:15,name:"Aseel",type:"standard",img:["images/17.jpeg"]},
+{id:16,name:"Musk Rose",type:"standard",img:["images/18.jpeg"]},
+{id:17,name:"Sabaya",type:"standard",img:["images/19.jpeg"]},
+{id:18,name:"Bakhoor",type:"standard",img:["images/21.jpeg"]},
+{id:19,name:"Vanilla",type:"standard",img:["images/vanilla.png"]},
+{id:20,name:"Chocolate",type:"standard",img:["images/chocolate.png"]},
+{id:21,name:"Black Oud",type:"premium",img:["images/black__oud.png"]},
+
+{id:22,name:"SRK",type:"premium",img:["images/srk.png"]},
+{id:23,name:"Ombre Leather",type:"premium",img:["images/omber.jpg"]},
+{id:26,name:"Most Wanted",type:"premium",img:["images/wanted.png"]},
+{id:30,name:"Ajmal Blue",type:"premium",img:["images/ajmal_blu2.png"]},
+{id:31,name:"Rasasi Hawas",type:"premium",img:["images/hawas.png"]},
+{id:32,name:"Le Male Elixer",type:"premium",img:["images/alixer.png"]},
+{id:8,name:"Kesar Chandan",type:"premium",img:["images/8.jpeg"]},
+{id:30,name:" Chandan",type:"premium",img:["images/8.jpeg"]},
+
+{id:24,name:"Mukhallat Zafran",type:"luxury",img:["images/zafran.png"]},
+{id:25,name:"Mitti Attar",type:"luxury",img:["images/mitthi.png"]},
+
+{id:29,name:"Khus",type:"elite",img:["images/khus.png"]},
+// CAR FRESHENERS
+{id:101,name:"Car Acqua Di Gio Fresh",type:"car",img:["images/car1.jpeg"]},
+{id:102,name:"Car Desire Fresh",type:"car",img:["images/car2.jpeg"]},
+{id:103,name:"Car Brut Fresh",type:"car",img:["images/car3.jpeg"]},
+{id:104,name:"Car Lavender Fresh",type:"car",img:["images/car4.jpeg"]},
+{id:105,name:"Car Magnet Fresh",type:"car",img:["images/car5.jpeg"]},
+];
+
+const pricing = {
+standard:150,
+premium:200,
+luxury:250,
+elite:400,
+car:350
+};
+
+const grid = document.getElementById("grid");
+const searchInput = document.getElementById("searchInput");
+const filter = document.getElementById("filter");
+
+function render(){
+
+    grid.innerHTML = "";
+
+    let list = products;
+
+    if(filter.value !== "all"){
+        list = list.filter(p => p.type === filter.value);
+    }
+
+    if(searchInput.value){
+        list = list.filter(p =>
+            p.name.toLowerCase().includes(searchInput.value.toLowerCase())
+        );
+    }
+
+    list.forEach((p,i)=>{   // NEW (added index i)
+
+        grid.innerHTML += `
+        <div class="card" style="animation-delay:${i*0.05}s" onclick="go(${p.id})">
+
+            
+            ${p.type === "car" ? `<div class="badge" style="background:#00bcd4">Car</div>` : ""}
+
+            ${[1,9,22].includes(p.id) ? `<div class="badge" style="top:40px;background:#ff4d4d">Best Seller</div>` : ""}  <!-- NEW -->
+
+            <img src="${p.img[0]}" onerror="this.src='images/default.jpg'"> <!-- NEW -->
+
+            <h3>${p.name}</h3>
+            <div class="price">Starts ₹${pricing[p.type]}</div>
+
+            <div class="card-btn">View Product</div>
+
+        </div>`;
+    });
+}
+
+function go(id){
+window.location.href = `product.html?id=${id}`;
+}
+
+/* 🔥 NEW FUNCTION */
+function scrollToProducts(){
+    document.getElementById("grid").scrollIntoView({ behavior: "smooth" });
+}
+
+searchInput.oninput = render;
+filter.onchange = render;
+
+render();
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About VASWA | Our Heritage</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #c9a96e; 
+    --bg: #0a0a0a; 
+    --glass: rgba(255, 255, 255, 0.02);
+    --text-light: #f5f5f5;
+    --text-muted: #aaa;
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url("images/hero.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    color: var(--primary);
+    text-shadow: 0 0 15px rgba(201, 169, 110, 0.5);
+}
+
+/* SECTION */
+.section {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 40px;
+    background: var(--glass);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    animation: fadeUp 0.7s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+/* 🔥 BILINGUAL MESSAGE GRID */
+.message-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.message-box {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.hindi-text {
+    color: var(--text-light);
+    border-right: 1px solid var(--border);
+    padding-right: 40px;
+    text-align: justify;
+}
+
+.english-text {
+    color: var(--text-muted);
+    text-align: justify;
+}
+
+/* WHY US GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.03);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.card h3 { color: var(--primary); margin-bottom: 10px; }
+
+/* FOUNDER SECTION */
+.founder-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.founder-img img {
+    width: 300px;
+    border-radius: 15px;
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 20px rgba(201, 169, 110, 0.3);
+}
+
+.founder-text { flex: 1; }
+
+/* FOOTER / CTA */
+.cta {
+    text-align: center;
+    margin: 80px 0;
+}
+
+.btn {
+    background: linear-gradient(90deg, #c9a96e, #a67c3b);
+    padding: 18px 40px;
+    color: black;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(201, 169, 110, 0.4);
+}
+/* FEEDBACK CARD STYLING */
+.feedback-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.feedback-card {
+    background: linear-gradient(135deg, rgba(201, 169, 110, 0.05), rgba(255, 255, 255, 0.01));
+    border: 1px dashed var(--primary); /* Dashed border for a "letter" feel */
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
+
+.feedback-card:hover {
+    background: rgba(201, 169, 110, 0.08);
+    transform: translateY(-5px);
+}
+
+.feedback-card h2 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.feedback-card p {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.email-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 1px solid var(--primary);
+    padding-bottom: 2px;
+    transition: 0.3s;
+}
+
+.email-link:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+/* =========================================
+   🔥 VASWA PREMIUM NAVBAR
+   ========================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    /* Glassmorphism Effect */
+    background: rgba(17, 17, 17, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* Luxury Gold Border */
+    border-bottom: 1px solid #c9a96e;
+    transition: 0.3s ease;
+}
+
+/* LOGO SECTION */
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 390px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* NAVIGATION LINKS */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #c9a96e;
+    text-decoration: underline;
+    text-decoration-color: #a67c3b;
+    text-underline-offset: 8px;
+}
+
+/* SEARCH & FILTER AREA */
+.search-box {
+    flex: 0.5;
+    max-width: 300px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    color: white;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #c9a96e;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#filter {
+    padding: 8px 12px;
+    background: #1a1a1a;
+    color: #c9a96e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .logo-img {
+        width: 220px; /* Scaled down for mobile screens */
+        height: auto;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .search-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #filter {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+footer {
+    padding: 40px;
+    background: rgba(255,255,255,0.02);
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+/* ========================= */
+/* 🔥 FOOTER */
+/* ========================= */
+footer {
+            margin-top: 80px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .footer-logo { font-family: 'Playfair Display', serif; color:#c9a96e; font-size: 40px; letter-spacing: 2px; margin-bottom: 15px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; transition: 0.3s; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+        .footer-links a:hover { color: var(--primary); }
+        .copyright { font-size: 11px; color: #555; margin-top: 20px; }
+
+/* MOBILE */
+@media(max-width:768px){
+    .message-grid { grid-template-columns: 1fr; }
+    .hindi-text { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 40px; }
+    .founder-container { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+
+<body>
+    <!-- 🔥 UPDATED NAVBAR -->
+<div class="navbar">
+
+    <div class="logo-box">
+        <img src="images/logo3.png" class="logo-img">
+        
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    
+
+    
+</div>
+
+<div class="hero">
+    <h1>About VASWA</h1>
+</div>
+
+<div class="section">
+    <h2>A Note from Our Founder</h2>
+    <div class="message-grid">
+        <div class="message-box hindi-text">
+            <p>
+                खुश रहना और अपनी खुशी की सुगंध बिखेरना भला कौन नहीं चाहता। आपका तन और मन दोनों महकें इसके लिए VASWA Attar & Perfumes ख़ास सुगंधों को आपके लिए देश-विदेश में सदियों से प्रसिद्ध इत्र नगरी कन्नौज से चुनकर लाता है।
+            </p>
+            <p>
+                मामला आपकी शख्सियत में चार चांद लगाने का हो, दिल जीत लेने वाली सुगंध से घर ऑफिस या महफिल में आकर्षण का केंद्र बनने का, VASWA के इत्र हर पल आपका साथ निभाते हैं। आपको महकाने के साथ ही ये इत्र आपको मानसिक सुकून और आत्मिक शांति प्रदान करने में भी सहायक होते हैं।
+            </p>
+            <p>
+                फिर मंदिर में भगवान की इत्र सेवा हो या दरगाह में इबादत के दौरान इत्र चढ़ाना VASWA आपकी हर जरूरत को समझता है। यही नहीं, देश भर में कहीं भी आपके कार, बेडरूम, ड्राइंग रूम, ऑफिस सभी को महकाने के लिए हर पल तैयार है।
+            </p>
+        </div>
+
+        <div class="message-box english-text">
+            <p>
+                Who doesn't want to live in joy and spread the fragrance of happiness? To ensure both your body and mind remain refreshed, VASWA Attar & Perfumes brings you exclusive scents handpicked from Kannauj—the world-renowned capital of perfumes.
+            </p>
+            <p>
+                Whether you want to add elegance to your personality or become the center of attraction in your home, office, or gatherings, VASWA fragrances stay with you every step of the way. Beyond the scent, they provide mental solace and spiritual peace.
+            </p>
+            <p>
+                From sacred offerings in temples to the spiritual ambiance of a Dargah, VASWA understands your every requirement. We are dedicated to enriching your life, your car, your bedroom, and your workspace with timeless aromas.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="section" style="background: none; border: none; box-shadow: none;">
+    <h2 style="text-align: center;">Why Choose VASWA</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>🌿 Natural Ingredients</h3>
+            <p>Made using traditional oils and natural extracts from Kannauj.</p>
+        </div>
+        <div class="card">
+            <h3>⏳ Long Lasting</h3>
+            <p>Our premium attars are concentrated to stay with you all day.</p>
+        </div>
+        
+        <div class="card">
+            <h3>🏺 Traditional Craft</h3>
+            <p>Blended with modern elegance and centuries-old techniques.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="founder-container">
+        <div class="founder-img">
+            <img src="images/i.png" alt="VAIBHAV SHARMA - FOUNDER OF VASWA">
+        </div>
+        <div class="founder-text">
+            <h2>Meet the Founder of VASWA</h2>
+            <h3 style="color: #fff; margin-bottom: 10px;">VAIBHAV SHARMA</h3>
+            <p>
+                VASWA was born from a deep-rooted passion for the timeless art of Kannauj attars. My vision is simple: to deliver premium, long-lasting, alcohol-free fragrances that reflect individuality and elegance.
+            </p>
+            <p>
+                Every fragrance is carefully curated to ensure that every drop offers a luxurious and soulful experience.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="cta">
+    <h2 style="font-family: 'Playfair Display', serif; color: var(--primary);">Experience True Elegance</h2>
+    <a href="index.html" class="btn">Shop the Collection</a>
+</div>
+<div class="feedback-section">
+    <div class="feedback-card">
+        <h2>Your Voice Matters</h2>
+        <p>At VASWA, we strive for perfection in every drop. Please give your valuable feedback and help us enhance your fragrance journey.</p>
+        <a href="mailto:info@vaswa.com?subject=Feedback%20for%20VASWA" class="email-link">
+            📩 Share Feedback: info@vaswa.com
+        </a>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-logo">VASWA</div>
+    
+    <div class="footer-links">
+        <a href="mailto:vaswaperfumes@gmail.com">📧 vaswaperfumes@gmail.com</a>
+        <a href="https://www.instagram.com/vaswaperfumes" target="_blank">📸 vaswaperfumes</a>
+        <a href="terms.html">📜 Terms & Conditions</a>
+    </div>
+
+    <div class="copyright" style="margin-top: 20px; font-size: 12px; color: var(--text-muted);">
+        © 2026 VASWA Premium Fragrances. All Rights Reserved.
+    </div>
+</footer>
+
+</body>
+</html>

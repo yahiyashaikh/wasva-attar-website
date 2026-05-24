@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact VASWA</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI', sans-serif;
+    background:#0f0f0f;
+    color:#f5f5f5;
+}
+
+/* HERO */
+.hero{
+    height:40vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.75)),
+    url("images/hero.png");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:42px;
+    color:#c9a96e;
+    letter-spacing:1px;
+}
+
+.hero p{
+    margin-top:10px;
+    color:#ddd;
+    font-size:16px;
+}
+
+/* SECTION */
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+/* GRID */
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+/* CARD */
+.card{
+    background:#1a1a1a;
+    border:1px solid #2d2d2d;
+    border-radius:16px;
+    padding:30px;
+    box-shadow:0 0 25px rgba(201,169,110,0.06);
+}
+
+/* TITLES */
+.card h2{
+    color:#c9a96e;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.card h3{
+    color:#c9a96e;
+    margin-bottom:8px;
+    margin-top:18px;
+}
+
+/* TEXT */
+.card p{
+    color:#cfcfcf;
+    line-height:1.7;
+    font-size:15px;
+}
+
+/* LINKS */
+a{
+    color:#c9a96e;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* FORM */
+.form-group{
+    margin-bottom:16px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    color:#ddd;
+    font-size:14px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:14px;
+    border-radius:10px;
+    border:1px solid #333;
+    background:#111;
+    color:white;
+    outline:none;
+    font-size:15px;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#c9a96e;
+}
+
+textarea{
+    min-height:140px;
+    resize:vertical;
+}
+
+/* BUTTON */
+.btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(90deg,#c9a96e,#a67c3b);
+    color:black;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:15px;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+/* SOCIAL */
+.socials{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+.social-btn{
+    padding:10px 16px;
+    border-radius:30px;
+    background:#111;
+    border:1px solid #333;
+    color:#c9a96e;
+    transition:0.3s;
+}
+
+.social-btn:hover{
+    border-color:#c9a96e;
+    transform:translateY(-2px);
+}
+
+/* MAP BOX */
+.map-box{
+    margin-top:20px;
+    background:#111;
+    border:1px solid #333;
+    padding:16px;
+    border-radius:12px;
+}
+/* =========================================
+   🔥 VASWA PREMIUM NAVBAR
+   ========================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    /* Glassmorphism Effect */
+    background: rgba(17, 17, 17, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* Luxury Gold Border */
+    border-bottom: 1px solid #c9a96e;
+    transition: 0.3s ease;
+}
+
+/* LOGO SECTION */
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 390px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* NAVIGATION LINKS */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #c9a96e;
+    text-decoration: underline;
+    text-decoration-color: #a67c3b;
+    text-underline-offset: 8px;
+}
+
+/* SEARCH & FILTER AREA */
+.search-box {
+    flex: 0.5;
+    max-width: 300px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    color: white;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #c9a96e;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#filter {
+    padding: 8px 12px;
+    background: #1a1a1a;
+    color: #c9a96e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .logo-img {
+        width: 220px; /* Scaled down for mobile screens */
+        height: auto;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .search-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #filter {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+/* ========================= */
+/* 🔥 FOOTER */
+/* ========================= */
+footer {
+            margin-top: 80px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .footer-logo { font-family: 'Playfair Display', serif; color:#c9a96e; font-size: 40px; letter-spacing: 2px; margin-bottom: 15px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; transition: 0.3s; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+        .footer-links a:hover { color: var(--primary); }
+        .copyright { font-size: 11px; color: #555; margin-top: 20px; }
+
+/* MOBILE */
+@media(max-width:900px){
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+}
+/* =======================================
+   🔥 BUSINESS CARD IMAGE SECTION
+======================================= */
+.brand-card-wrap{
+    max-width:1200px;
+    margin:0 auto 40px;
+    padding:0 20px;
+}
+
+.brand-card{
+    width:100%;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid rgba(201,169,110,0.25);
+    box-shadow:0 0 35px rgba(201,169,110,0.12);
+    background:#111;
+}
+
+.brand-card img{
+    width:100%;
+    display:block;
+    object-fit:cover;
+    transition:0.4s ease;
+}
+
+.brand-card:hover img{
+    transform:scale(1.01);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .brand-card-wrap{
+        padding:0 15px;
+        margin-bottom:25px;
+    }
+
+    .brand-card{
+        border-radius:12px;
+    }
+}
+</style>
+</head>
+
+<body>
+    <!-- 🔥 UPDATED NAVBAR -->
+<div class="navbar">
+
+    <div class="logo-box">
+        <img src="images/logo3.png" class="logo-img">
+        
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        
+    </div>
+
+    
+
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>Contact VASWA</h1>
+        <p>We’d love to hear from you. Premium fragrances, premium support.</p>
+    </div>
+</section>
+
+<!-- 🔥 BUSINESS PROMO CARD -->
+<section class="brand-card-wrap">
+    <div class="brand-card">
+        <img src="images/card.jpeg" alt="VASWA Business Card">
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section">
+
+    <div class="contact-grid">
+
+        <!-- LEFT -->
+        <div class="card">
+            <h2>Get In Touch/Customer Care</h2>
+
+            <h3>📧 Email</h3>
+            <p>
+                <a href="mailto:vaswaperfumes@gmail.com">
+                    vaswaperfumes@gmail.com
+                </a>
+            </p>
+
+            <h3>📱 WhatsApp</h3>
+            <p>
+                <a href="https://wa.me/918840899238" target="_blank">
+                    +91 88408 99238
+                </a>
+            </p>
+
+            <h3>📸 Instagram</h3>
+            <p>
+                <a href="https://www.instagram.com/vaswaperfumes" target="_blank">
+                    @vaswaperfumes
+                </a>
+            </p>
+
+            <h3>📍 Location</h3>
+            <p>Lucknow, India</p>
+
+            <div class="socials">
+                <a class="social-btn" href="https://wa.me/918840899238" target="_blank">WhatsApp</a>
+                <a class="social-btn" href="https://www.instagram.com/vaswaperfumes" target="_blank">Instagram</a>
+                <a class="social-btn" href="mailto:vaswaperfumes@gmail.com">Email</a>
+            </div>
+
+            <div class="map-box">
+                <p><strong style="color:#c9a96e;">Business Hours</strong></p>
+                <p>Mon - Sat : 10:00 AM to 8:00 PM</p>
+                <p>Sunday : By Appointment</p>
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="card">
+            <h2>Send Us A Message</h2>
+
+            <form onsubmit="sendWhatsApp(event)">
+                
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Your Email</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Your Message</label>
+                    <textarea id="message" required></textarea>
+                </div>
+
+                <button class="btn" type="submit">
+                    Send via WhatsApp
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">VASWA</div>
+    
+    <div class="footer-links">
+        <a href="mailto:vaswaperfumes@gmail.com">📧 vaswaperfumes@gmail.com</a>
+        <a href="https://www.instagram.com/vaswaperfumes" target="_blank">📸 vaswaperfumes</a>
+        <a href="terms.html">📜 Terms & Conditions</a>
+    </div>
+
+    <div class="copyright" style="margin-top: 20px; font-size: 12px; color: var(--text-muted);">
+        © 2026 VASWA Premium Fragrances. All Rights Reserved.
+    </div>
+</footer>
+
+<script>
+function sendWhatsApp(e){
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    let text = `Hello VASWA,%0A%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+
+    window.open(`https://wa.me/918840899238?text=${text}`,'_blank');
+}
+</script>
+
+</body>
+</html>
