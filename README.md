@@ -96,37 +96,7 @@ WasvaAttar/
 
 ---
 
-# 📸 Screenshots
 
-## 🏠 Homepage
-Add homepage screenshot here
-
-```bash
-/screenshots/homepage.png
-```
-
-## 🛍️ Product Section
-Add product section screenshot here
-
-```bash
-/screenshots/products.png
-```
-
-## 📱 Mobile Responsive UI
-Add mobile UI screenshot here
-
-```bash
-/screenshots/mobile-ui.png
-```
-
-## 📞 Contact Section
-Add contact page screenshot here
-
-```bash
-/screenshots/contact.png
-```
-
----
 
 # ▶️ Installation & Setup
 
